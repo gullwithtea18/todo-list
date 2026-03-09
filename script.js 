@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function addTask() {
+<<<<<<< HEAD
     const input = document.getElementById('newTaskInput');
     const taskText = input.value.trim();
     
@@ -205,3 +206,14 @@ document.getElementById('newTaskInput').addEventListener('keypress', function(e)
         addTask();
     }
 });
+=======
+         const input = document.getElementById('newTaskInput');
+         if(input.value.trim()) {
+             const taskList = document.getElementById('taskList');
+             const newItem = document.createElement('li');
+             newItem.textContent = input.value;
+             taskList.appendChild(newItem);
+             input.value = '';
+         }
+     }
+>>>>>>> release/v1.0
