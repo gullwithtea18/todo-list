@@ -1,15 +1,38 @@
 <!DOCTYPE html>
-     <html lang="en">
-       <head>
-           <meta charset="UTF-8">
-           <title>My Todo App</title>
-           <link rel="stylesheet" href="style.css">
-       </head>
-       <body>
-           <h1>Моя задача на сегодня:</h1>
-           <ul id="taskList"></ul>
-           <input type="text" id="newTaskInput" placeholder="Новая задача...">
-           <button onclick="addTask()">Добавить задачу</button>
-           <script src="script.js"></script>
-       </body>
-     </html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой ToDo App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-tasks"></i> Мой список задач</h1>
+        
+        <div class="input-section">
+            <input type="text" id="newTaskInput" placeholder="Введите новую задачу..." autocomplete="off">
+            <button id="addButton" onclick="addTask()">
+                <i class="fas fa-plus"></i> Добавить
+            </button>
+        </div>
+        
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterTasks('all')">Все</button>
+            <button class="filter-btn" onclick="filterTasks('active')">Активные</button>
+            <button class="filter-btn" onclick="filterTasks('completed')">Выполненные</button>
+        </div>
+        
+        <ul id="taskList">
+        </ul>
+        
+        <div class="stats">
+            <span id="taskCounter">0 задач</span>
+            <button id="clearCompleted" onclick="clearCompleted()">Очистить выполненные</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
